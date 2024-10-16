@@ -1,0 +1,67 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "ORIENT Bambino 38.4 mm Nam RA-AP0104S30B",
+      "quantity": 30,
+      "price": 5490000,
+      "description": "Đồng hồ Orient Small Bambino 38.4 mm Nam RA-AP0104S30B thuộc thương hiệu Orient của Nhật Bản",
+      "type": "Cơ tự động ",
+      "importDate": "2024-10-15",
+      "exportDate": null,
+      "supplier": "ORIENT",
+      "status": "Available",
+      "location": "Kệ 3, Khu 4"
+    },
+    {
+      "id": 2,
+      "name": "Orient Mako Solar 42.8 mm Nam RA-TX0201L10B",
+      "quantity": 50,
+      "price": 7005000,
+      "description": "Đồng hồ Orient Mako Solar 42.8 mm Nam RA-TX0201L10B thuộc thương hiệu Orient của Nhật Bản.",
+      "type": "Năng lượng ánh sáng",
+      "importDate": "2024-10-14",
+      "exportDate": null,
+      "supplier": "ORIENT",
+      "status": "Available",
+      "location": "Kệ 4, Khu 4"
+    },
+    {
+      "id": 3,
+      "name": "Citizen 42 mm Nam NH8400-87L",
+      "quantity": 40,
+      "price": 6813000,
+      "description": "Đồng hồ Citizen 42 mm Nam NH8400-87L thuộc thương hiệu Citizen của Nhật Bản.",
+      "type": "Cơ tự động ",
+      "importDate": "2024-10-13",
+      "exportDate": null,
+      "supplier": "ORIENT",
+      "status": "Available",
+      "location": "Kệ 2, Khu 4"
+    },    {
+      "id": 4,
+      "name": "Đồng hồ Casio 34 mm Nam MTP-M305L-7AVDF",
+      "quantity": 60,
+      "price": 2756000,
+      "description": "Đồng hồ Casio thuộc thương hiệu Việt Nam",
+      "type": "Pin",
+      "importDate": "2024-10-11",
+      "exportDate": null,
+      "supplier": "CASIO",
+      "status": "Available",
+      "location": "Kệ 1, Khu 2"
+    },    {
+      "id": 5,
+      "name": "Đồng hồ Elio Starlight 25.5 mm Nữ ES178-01",
+      "quantity": 20,
+      "price": 890000,
+      "description": "Đồng hồ Elio Starlight thuộc thương hiệu Trung Quốc",
+      "type": "Pin",
+      "importDate": "2024-10-10",
+      "exportDate": null,
+      "supplier": "ELIO",
+      "status": "Available",
+      "location": "Kệ 1, Khu 1"
+    }
+  ]
+}
