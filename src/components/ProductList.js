@@ -1,21 +1,83 @@
 import React, { useEffect, useState } from "react";
-import { Table } from 'react-bootstrap';
+import { Table } from "react-bootstrap";
 
 const ProductList = () => {
+  const [products, setProducts] = useState([]);
 
-    const [products, setProducts] = useState([]);
+  const fetchListProduct = () => {
+    fetch("http://localhost:4000/products", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data, "GET____");
+        setProducts(data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
 
-    useEffect(() => {
-        fetch('http://localhost:4000/products') // JSON server
-          .then(res => res.json())
-          .then(data => setProducts(data));
-      }, []);
+  const handleAddProduct = () => {
+    const randomId = Date.now();
+    const newProduct = {
+      description: null,
+      exportDate: null,
+      id: randomId,
+      importDate: null,
+      location: null,
+      name: null,
+      price: null,
+      quantity: null,
+      status: null,
+      supplier: null,
+      type: null,
+    };
+    const newListProduct = [...products, newProduct];
+    // Chon 1 trong 2 cach
+    // const newIProduct = products.push(newIProduct)
+    setProducts(newListProduct);
+  };
 
-  return <div>
-    <h2> Product List </h2>
-    
-    <Table striped bordered hover>
-        <thead>
+  const handleSubmitProduct = () => {
+    fetch("http://localhost:4000/products", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ products }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data, "POST____");
+        setProducts(data.products);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
+
+  useEffect(() => {
+    fetchListProduct();
+  }, []);
+
+  useEffect(() => {
+    if (products) console.log(products, "_____________");
+  }, [products]);
+
+  return (
+    <div>
+      <div>
+        <h2> Product List </h2>
+        <button onClick={handleAddProduct}>Add</button>
+        <button onClick={handleSubmitProduct}>Submit</button>
+      </div>
+
+      <Table striped bordered hover>
+        <thead className="table-primary">
           <tr>
             <th>#</th>
             <th>Product Name</th>
@@ -31,9 +93,9 @@ const ProductList = () => {
           </tr>
         </thead>
         <tbody>
-          {products.map(product => (
+          {products.map((product, index) => (
             <tr key={product.id}>
-              <td>{product.id}</td>
+              <td>{index + 1}</td>
               <td>{product.name}</td>
               <td>{product.quantity}</td>
               <td>{product.price} VND</td>
@@ -44,13 +106,12 @@ const ProductList = () => {
               <td>{product.supplier}</td>
               <td>{product.status}</td>
               <td>{product.location}</td>
-
             </tr>
           ))}
         </tbody>
       </Table>
-
-  </div>;
+    </div>
+  );
 };
 
 export default ProductList;
