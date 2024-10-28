@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+.add-submit-button {
+  background-color: #32a89c !important;
+  border: none !important;
+}
+
+.search {
+  height: 40px;
+}
+
+.input-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.input-row input,
+.input-row select {
+  flex: 1;
+  min-width: 120px;
+  max-width: 200px;
+}
